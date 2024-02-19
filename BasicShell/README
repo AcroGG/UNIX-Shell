@@ -1,5 +1,5 @@
 David Garcia
-Files: Shell.c; Makefile; proj1-1.pdf; README; Shell, Shell.o
+Files: Shell.c; Makefile; README; Shell, Shell.o
     Shell.c: the main program for the shell
         function:
             main: shell structure, prompt and functions initilizations.
@@ -8,10 +8,9 @@ Files: Shell.c; Makefile; proj1-1.pdf; README; Shell, Shell.o
             change_dir: uses setenv to change directory if 'cd' is called.
             show_pids: iterates and shows the last 5 pid processes.
             add_pids: adds the last 5 pids to the pid array.
-            execute_externals: allows the shell to execute external basic commands such as ls, df, etc. contains fork, waitpid and execvp as per project instructions.
-            execute_command: executes the built in required commands that were requested per project instructions with out fork, exec, waitpid. String compares input to match 'cd', and 'showpid' commands 'exit' is placed in main.
+            execute_externals: allows the shell to execute external basic commands such as ls, df, etc. contains fork, waitpid and execvp.
+            execute_command: executes the built commands with out fork, exec, waitpid. String compares input to match 'cd', and 'showpid' commands 'exit' is placed in main.
     Makefile: compiles the shell.c program.
-    proj1-1.pdf: project instructions.
     README: this file.
     Shell: executable file for linux.
     Shell.o: object file for shell.c.
