@@ -1,0 +1,32 @@
+David Garcia
+Files: Shell.c; Makefile; proj1-1.pdf; README; Shell, Shell.o
+    Shell.c: the main program for the shell
+        function:
+            main: shell structure, prompt and functions initilizations.
+            free_tokens: memory reseting for token inputs to remove garbage.
+            parse_input: parses and stores input for tokenization removes whitespacing.
+            change_dir: uses setenv to change directory if 'cd' is called.
+            show_pids: iterates and shows the last 5 pid processes.
+            add_pids: adds the last 5 pids to the pid array.
+            execute_externals: allows the shell to execute external basic commands such as ls, df, etc. contains fork, waitpid and execvp as per project instructions.
+            execute_command: executes the built in required commands that were requested per project instructions with out fork, exec, waitpid. String compares input to match 'cd', and 'showpid' commands 'exit' is placed in main.
+    Makefile: compiles the shell.c program.
+    proj1-1.pdf: project instructions.
+    README: this file.
+    Shell: executable file for linux.
+    Shell.o: object file for shell.c.
+
+INSTRUCTIONS:
+    MUST COMPILE IN A PURE LINUX ENVIRONMENT OR LINUX VM DUE TO <sys/wait.h> dependencies not being available in windows.
+    1. open linux terminal.
+    2. navigate to the directory where the files are located.
+    3. (optional) type 'make' to recompile the program files executable is already included.
+    4. type './Shell' to run the program.
+    5. use commands like 'cd ..', 'showpid', 'pwd', 'cd [ARGS], 'ls', 'df', etc. for testing.
+    6. type 'exit' to exit the program.
+    7. type 'make clean' to remove the object file and the executable file (optional).
+
+Challenges:
+    1. The biggest challenge was understanding the fork, execvp, and waitpid functions and how they interact with each other. 
+    2. The second biggest challenge was trying to compile and code the project to also work in a windows environment to create a workable .exe for simple plug and play running. 
+    But due to the shell needing the <sys/wait.h> dependency for pid functionality it was not possible and a linux environment was required.
